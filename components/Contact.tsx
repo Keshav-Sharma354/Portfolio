@@ -185,7 +185,8 @@ const Contact = () => {
                 Send a Message
               </h3>
               
-              <form className="space-y-6">
+              <form name="contact" method="POST" data-netlify="true" className="space-y-6">
+                <input type="hidden" name="form-name" value="contact" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-enhanced mb-2">
@@ -195,6 +196,7 @@ const Contact = () => {
                       type="text"
                       id="name"
                       name="name"
+                      required
                       className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg text-white placeholder-gray-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors duration-300"
                       placeholder="Your name"
                     />
