@@ -92,7 +92,7 @@ const Contact = () => {
           </h2>
           <p className="text-xl text-enhanced max-w-3xl mx-auto">
             Ready to discuss DevOps opportunities, cloud architecture projects, or infrastructure automation challenges? 
-            Let's connect and explore how we can work together.
+            Let&apos;s connect and explore how we can work together.
           </p>
         </motion.div>
 

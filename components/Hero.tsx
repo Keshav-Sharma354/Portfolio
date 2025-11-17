@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { ChevronDown, Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink } from 'lucide-react'
 
 const Hero = () => {
@@ -56,9 +57,11 @@ const Hero = () => {
           >
             <div className="relative">
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary-500 to-cyan-600 p-1 glow">
-                <img 
+                <Image 
                   src="/profile.jpg" 
                   alt="Keshav Sharma" 
+                  width={160}
+                  height={160}
                   className="w-full h-full rounded-full object-cover"
                 />
               </div>
