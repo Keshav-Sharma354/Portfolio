@@ -35,7 +35,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-16 md:pt-24 md:pb-20">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-44">
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -56,7 +56,7 @@ const Hero = () => {
             className="mb-6 md:mb-8"
           >
             <div className="relative inline-block">
-              <div className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full bg-gradient-to-br from-primary-500 to-cyan-600 p-1 glow">
+              <div className="w-44 h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 rounded-full bg-gradient-to-br from-primary-500 to-cyan-600 p-1 glow">
                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-800">
                   <Image 
                     src="/profile.jpg" 
@@ -68,7 +68,7 @@ const Hero = () => {
                   />
                 </div>
               </div>
-              <div className="absolute top-0 right-2 w-6 h-6 md:w-7 md:h-7 bg-green-500 rounded-full border-4 border-slate-900 animate-pulse shadow-lg"></div>
+              <div className="absolute top-1 right-3 w-6 h-6 md:w-7 md:h-7 bg-green-500 rounded-full border-4 border-slate-900 animate-pulse shadow-lg"></div>
             </div>
           </motion.div>
 
