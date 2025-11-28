@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ChevronDown, Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink } from 'lucide-react'
+import { ChevronDown, Github, Linkedin, Mail, Phone, MapPin, Download } from 'lucide-react'
 
 const Hero = () => {
   const containerVariants = {
@@ -35,7 +35,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-16 md:pt-24 md:pb-20">
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -43,43 +43,46 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="text-center"
+          className="text-center flex flex-col items-center"
         >
           {/* Profile Image */}
           <motion.div
             variants={itemVariants}
-            className="mb-8 flex justify-center"
+            className="mb-6 md:mb-8"
           >
-            <div className="relative">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary-500 to-cyan-600 p-1 glow">
-                <Image 
-                  src="/profile.jpg" 
-                  alt="Keshav Sharma" 
-                  width={160}
-                  height={160}
-                  className="w-full h-full rounded-full object-cover"
-                />
+            <div className="relative inline-block">
+              <div className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full bg-gradient-to-br from-primary-500 to-cyan-600 p-1 glow">
+                <div className="w-full h-full rounded-full overflow-hidden bg-slate-800">
+                  <Image 
+                    src="/profile.jpg" 
+                    alt="Keshav Sharma" 
+                    width={224}
+                    height={224}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div>
               </div>
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-slate-900 animate-pulse"></div>
+              <div className="absolute top-0 right-2 w-6 h-6 md:w-7 md:h-7 bg-green-500 rounded-full border-4 border-slate-900 animate-pulse shadow-lg"></div>
             </div>
           </motion.div>
 
           {/* Name and Title */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
+            className="text-4xl md:text-5xl lg:text-7xl font-bold mb-3 md:mb-4"
           >
             <span className="gradient-text">Keshav Sharma</span>
           </motion.h1>
 
           <motion.h2
             variants={itemVariants}
-            className="text-xl md:text-2xl lg:text-3xl text-subtitle mb-6 font-light"
+            className="text-xl md:text-2xl lg:text-3xl text-subtitle mb-5 md:mb-6 font-light"
           >
             DevOps Engineer & Cloud Architect
           </motion.h2>
@@ -87,7 +90,7 @@ const Hero = () => {
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-enhanced max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-base md:text-lg lg:text-xl text-enhanced max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed px-4"
           >
             Passionate about automating infrastructure, optimizing cloud architectures, and building scalable systems. 
             Specialized in AWS, Kubernetes, CI/CD pipelines, and Infrastructure as Code with 1+ years of hands-on experience.
@@ -96,32 +99,32 @@ const Hero = () => {
           {/* Contact Info */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap justify-center gap-4 mb-8 text-sm md:text-base"
+            className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-3 md:gap-6 mb-6 md:mb-8 text-sm md:text-base"
           >
             <div className="flex items-center space-x-2 text-enhanced">
-              <MapPin size={16} className="text-white" />
+              <MapPin size={18} className="text-primary-400 flex-shrink-0" />
               <span>Kota, Rajasthan, India</span>
             </div>
             <div className="flex items-center space-x-2 text-enhanced">
-              <Phone size={16} className="text-white" />
+              <Phone size={18} className="text-primary-400 flex-shrink-0" />
               <span>+91 6350386223</span>
             </div>
             <div className="flex items-center space-x-2 text-enhanced">
-              <Mail size={16} className="text-white" />
-              <span>sanadhyakeshav82@gmail.com</span>
+              <Mail size={18} className="text-primary-400 flex-shrink-0" />
+              <span className="break-all">sanadhyakeshav82@gmail.com</span>
             </div>
           </motion.div>
 
           {/* Action Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-8 md:mb-12 w-full max-w-md mx-auto px-4"
           >
             <motion.a
               href="mailto:sanadhyakeshav82@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-primary-600 hover:bg-primary-700 btn-text px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2 glow"
+              className="bg-primary-600 hover:bg-primary-700 btn-text px-6 md:px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 glow w-full sm:w-auto"
             >
               <Mail size={20} />
               <span>Get In Touch</span>
@@ -132,7 +135,7 @@ const Hero = () => {
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary-600 px-6 md:px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto"
             >
               <Download size={20} />
               <span>Download Resume</span>
@@ -142,7 +145,7 @@ const Hero = () => {
           {/* Social Links */}
           <motion.div
             variants={itemVariants}
-            className="flex justify-center space-x-6 mb-12"
+            className="flex justify-center space-x-8 mb-10 md:mb-12"
           >
             <motion.a
               href="https://github.com/Keshav-Sharma354"
@@ -150,9 +153,10 @@ const Hero = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
-              className="text-white hover:text-primary-200 transition-colors duration-300"
+              className="text-white hover:text-primary-400 transition-colors duration-300"
+              aria-label="GitHub Profile"
             >
-              <Github size={28} />
+              <Github size={32} />
             </motion.a>
             <motion.a
               href="https://linkedin.com/in/keshav-sharma-6551711b8"
@@ -160,17 +164,19 @@ const Hero = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: -5 }}
               whileTap={{ scale: 0.9 }}
-              className="text-white hover:text-primary-200 transition-colors duration-300"
+              className="text-white hover:text-primary-400 transition-colors duration-300"
+              aria-label="LinkedIn Profile"
             >
-              <Linkedin size={28} />
+              <Linkedin size={32} />
             </motion.a>
             <motion.a
               href="mailto:sanadhyakeshav82@gmail.com"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
-              className="text-white hover:text-primary-200 transition-colors duration-300"
+              className="text-white hover:text-primary-400 transition-colors duration-300"
+              aria-label="Email Contact"
             >
-              <Mail size={28} />
+              <Mail size={32} />
             </motion.a>
           </motion.div>
 
@@ -184,7 +190,8 @@ const Hero = () => {
               onClick={scrollToNext}
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="text-white hover:text-primary-200 transition-colors duration-300"
+              className="text-white hover:text-primary-400 transition-colors duration-300"
+              aria-label="Scroll to next section"
             >
               <ChevronDown size={32} />
             </motion.button>
