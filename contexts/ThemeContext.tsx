@@ -37,13 +37,11 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, [])
 
   useEffect(() => {
-    // Apply theme to document
+    // Apply theme to document using CSS classes
     if (isDark) {
       document.documentElement.classList.add('dark')
-      document.documentElement.style.background = 'linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 30%, #16213e 60%, #0f3460 100%)'
     } else {
       document.documentElement.classList.remove('dark')
-      document.documentElement.style.background = 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #cbd5e1 60%, #94a3b8 100%)'
     }
     
     // Save theme preference

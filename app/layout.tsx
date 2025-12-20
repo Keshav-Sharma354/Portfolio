@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import Favicon from '@/components/Favicon'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,6 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <Favicon />
+      </head>
       <body className={`${inter.className} text-white min-h-screen`}>
         <ThemeProvider>
           {children}

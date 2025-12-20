@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Home, User, Briefcase, Code, GraduationCap, Mail } from 'lucide-react'
 import Logo from './Logo'
-import ThemeToggle from './ThemeToggle'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -68,34 +67,25 @@ const Navigation = () => {
             </motion.div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-6">
-              {navItems.map((item, index) => (
-                <motion.button
-                  key={item.id}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index }}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-white glow-blue'
-                      : 'text-gray-300 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  <item.icon size={16} />
-                  <span>{item.label}</span>
-                </motion.button>
-              ))}
-              
-              {/* Theme Toggle */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.6 }}
-              >
-                <ThemeToggle />
-              </motion.div>
-            </div>
+              <div className="hidden md:flex space-x-8">
+                {navItems.map((item, index) => (
+                  <motion.button
+                    key={item.id}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * index }}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
+                      activeSection === item.id
+                        ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-white glow-blue'
+                        : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    }`}
+                  >
+                    <item.icon size={16} />
+                    <span>{item.label}</span>
+                  </motion.button>
+                ))}
+              </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
