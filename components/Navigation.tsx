@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Home, User, Briefcase, Code, GraduationCap, Mail } from 'lucide-react'
+import Logo from './Logo'
+import ThemeToggle from './ThemeToggle'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,7 +35,7 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [navItems])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -57,13 +59,16 @@ const Navigation = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-xl font-bold text-enhanced"
+              className="flex items-center space-x-3"
             >
-              Keshav Sharma
+              <Logo size="sm" />
+              <span className="text-xl font-bold bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink bg-clip-text text-transparent text-glow-blue">
+                Keshav Sharma
+              </span>
             </motion.div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
@@ -73,7 +78,7 @@ const Navigation = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
                     activeSection === item.id
-                      ? 'bg-primary-600 text-white'
+                      ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-white glow-blue'
                       : 'text-gray-300 hover:text-white hover:bg-white/10'
                   }`}
                 >
@@ -81,6 +86,15 @@ const Navigation = () => {
                   <span>{item.label}</span>
                 </motion.button>
               ))}
+              
+              {/* Theme Toggle */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                <ThemeToggle />
+              </motion.div>
             </div>
 
             {/* Mobile Menu Button */}

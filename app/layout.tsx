@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { ThemeProvider } from '@/contexts/ThemeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Keshav Sharma - DevOps Engineer',
-  description: 'Portfolio of Keshav Sharma, DevOps Engineer specializing in AWS, Kubernetes, CI/CD, and Infrastructure as Code',
-  keywords: ['DevOps', 'AWS', 'Kubernetes', 'Docker', 'Terraform', 'Jenkins', 'CI/CD'],
+  description: 'DevOps Engineer with 7+ years of experience designing, automating, and operating scalable cloud infrastructure and CI/CD platforms.',
+  keywords: ['DevOps', 'AWS', 'Kubernetes', 'Docker', 'Terraform', 'Jenkins', 'CI/CD', 'DevSecOps'],
   authors: [{ name: 'Keshav Sharma' }],
 }
 
@@ -23,9 +24,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} text-white min-h-screen`} style={{background: 'linear-gradient(135deg, #669bbc, #4a7c95, #669bbc)'}}>
-        {children}
+      <body className={`${inter.className} text-white min-h-screen`}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
 }
+

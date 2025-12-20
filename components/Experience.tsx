@@ -73,7 +73,7 @@ const Experience = () => {
             <span className="gradient-text">Work Experience</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Professional journey in DevOps engineering and cloud infrastructure management
+            Professional journey of 7+ years in DevOps engineering and cloud infrastructure management
           </p>
         </motion.div>
 
@@ -197,3 +197,4 @@ const Experience = () => {
 }
 
 export default Experience
+

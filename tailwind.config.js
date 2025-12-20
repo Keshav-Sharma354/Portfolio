@@ -31,6 +31,26 @@ module.exports = {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
+        },
+        // Enhanced dark theme colors
+        midnight: {
+          50: '#f0f4ff',
+          100: '#e0e8ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
+        },
+        neon: {
+          blue: '#00d4ff',
+          cyan: '#00f5d4',
+          purple: '#8338ec',
+          pink: '#ff006e',
+          green: '#00ff88',
         }
       },
       animation: {
