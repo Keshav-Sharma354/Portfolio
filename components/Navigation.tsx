@@ -1,22 +1,22 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Home, User, Briefcase, Code, GraduationCap, Mail } from 'lucide-react'
+import { Menu, X, Home, Lightbulb, Briefcase, Code, GraduationCap, Mail } from 'lucide-react'
 import Logo from './Logo'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
 
-  const navItems = [
-    { id: 'hero', label: 'Home', icon: Home },
-    { id: 'skills', label: 'Skills', icon: User },
+  const navItems = useMemo(() => [
+    { id: 'home', label: 'Home', icon: Home },
+    { id: 'skills', label: 'Skills', icon: Lightbulb },
     { id: 'experience', label: 'Experience', icon: Briefcase },
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'education', label: 'Education', icon: GraduationCap },
     { id: 'contact', label: 'Contact', icon: Mail },
-  ]
+  ], [])
 
   useEffect(() => {
     const handleScroll = () => {

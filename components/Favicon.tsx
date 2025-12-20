@@ -48,8 +48,7 @@ const Favicon = () => {
       ctx.fill()
       
       // Update favicon - Fixed: Cast to HTMLLinkElement
-      const linkElement = document.querySelector("link[rel*='icon']") || document.createElement('link')
-      const link = linkElement as HTMLLinkElement
+      const link = (document.querySelector("link[rel*='icon']") || document.createElement('link')) as HTMLLinkElement
       link.type = 'image/x-icon'
       link.rel = 'icon'
       link.href = canvas.toDataURL('image/png')
